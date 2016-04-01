@@ -10,7 +10,7 @@ public class NameGenerator
     private static final int PRIMERAS_TRES_LETRAS = 3;
     private static final int PRIMERAS_DOS_LETRAS = 2;
     
-    public String generateStarWarsName () {
+    public void generateStarWarsName () {
         Scanner teclado = new Scanner(System.in);
         String nombreCompleto = null;
         
@@ -26,6 +26,24 @@ public class NameGenerator
         System.out.println("Introduce la ciudad donde naciste");
         String ciudad = teclado.next();
         
-        return nombreCompleto;
+        String nombrePelicula = "";
+        String apellidoPelicula = "";
+        for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
+            nombrePelicula += apellido.charAt(index);
+        }
+        
+        for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
+            nombrePelicula += nombre.charAt(index);
+        }
+        
+        for(int index = 0; index<PRIMERAS_DOS_LETRAS; index++) {
+            apellidoPelicula += apellidoMadre.charAt(index);
+        }
+        
+        for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
+            apellidoPelicula += ciudad.charAt(index);
+        }
+        nombreCompleto = nombrePelicula + " " + apellidoPelicula;     
+        System.out.println(nombreCompleto);
     }
 }
