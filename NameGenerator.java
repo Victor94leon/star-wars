@@ -18,22 +18,22 @@ public class NameGenerator
         String ciudadUsuario = ciudad;
         
         String nombrePelicula = "";
+        String nombrePelicula2 = "";
         String apellidoPelicula = "";
+        String apellidoPelicula2 = "";
         for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
             nombrePelicula += apellidoUsuario.charAt(index);
-        }
-        
-        for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
-            nombrePelicula += nombreUsuario.charAt(index);
+            nombrePelicula2 += nombreUsuario.charAt(index);
+            apellidoPelicula2 += apellidoMadreUsuario.charAt(index);
         }
         
         for(int index = 0; index<PRIMERAS_DOS_LETRAS; index++) {
             apellidoPelicula += apellidoMadreUsuario.charAt(index);
         }
         
-        for(int index = 0; index<PRIMERAS_TRES_LETRAS; index++) {
-            apellidoPelicula += ciudadUsuario.charAt(index);
-        }
+        nombrePelicula += nombrePelicula2;
+        apellidoPelicula += apellidoPelicula2;
+        
         nombreCompleto = nombrePelicula + " " + apellidoPelicula;     
         System.out.println(nombreCompleto);
     }
